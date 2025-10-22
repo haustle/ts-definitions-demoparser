@@ -46,7 +46,6 @@ https://github.com/user-attachments/assets/084a3d82-ca0e-4da6-9bbe-8cd1129bc179
 
 Just copy the `index.d.ts` and related files from `types` directory into your local repo. Regardless of where the files are placed, as long as the `index.d.ts` file has the `declare module "@laihoe/demoparser2"` statement, the function signatures will be overridden
 
-This is not very professional, but this 
 
 ## How were the types generated?
 
