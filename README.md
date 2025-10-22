@@ -65,5 +65,5 @@ This is not very professional, but this
 
 - Ideally these types are initialized in Rust and are ported over/generated when creating JavaScript bindings. This feels the most correct approach, but I don’t know enough about Rust or how bindings work to have the will to go down the journey
 - The generated types can drift from what’s available in game. Ex. If valve decide to release a new event type, the package is currently not in form to automatically pick up/fail when this happens
-- The typing support is bare bones and doesn’t account for complex more complex return types. For example, when passing `playerProperties: ["X", "Y"]`, it’s possible for the returned object to have related, but differently named fields (ex. `team_X`, not real just an example).
-    - Since we’re only modifying the types and not any compiled/run time code, you can just log out the returned object to see the actual fields being returned. Ex. if you know the key exist you can still fetch the value
+- The typing support is bare bones/lazy and doesn’t cover cases where additional requested property names map to a different variable name in returned object. For example, when passing `includePlayerProperties: ["X", "Y"]`, it’s possible for the returned object (depending on event type) to have a related but differently named fields
+    - Since we’re not making any runtime code changes, you can just log out the returned object to see the actual fields being. Ex. if you know the key exist you can still fetch the value
